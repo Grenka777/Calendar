@@ -1,0 +1,76 @@
+body {
+  background-color: #5555554b;
+}
+
+.flatBtn {
+  font-size: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 20em;
+}
+
+.calendar-container {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 4em 2em;
+  border: 2px solid #000000 ;
+  border-radius: 10px;
+  margin-left: 150px;
+  margin-right: 150px;
+  background-color: rgb(106, 0, 192);
+  color: white;
+  
+}
+
+.month-header {
+  margin-bottom: 10px;
+  margin-left: 25px;
+  text-align: center;
+}
+
+.weekdays-header {
+  display: grid;
+  grid-template-columns: repeat(7,5em);
+}
+
+.weekday {
+  display: inline-block;
+  width: calc(100% / 7);
+  text-align: center;
+  font-weight: bold;
+}
+
+.days-container {
+  display: grid;
+  grid-template-columns:  repeat(7,5em);
+  counter-reset: daysCounter ;
+}
+
+.day::before {
+  counter-increment: daysCounter;
+  content: counter(daysCounter);
+  height: 40px;
+  margin: 0.5px;
+  display: grid;
+  
+}
+
+.day.fisrt {
+  grid-column-start:3;
+}
+
+.flat{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: left;
+}
+
+.flat > .day::before{
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.flat > .weekday {
+  display: none;
+}
